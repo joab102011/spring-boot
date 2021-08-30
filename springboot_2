@@ -1,15 +1,25 @@
-import java.util.Date;
-import java.util.TimerTask;
+import java.util.Timer;
 
 
-public class Agendador extends TimerTask {
+public class StartAgendador {
 
-       Date instanteAtual;
+       /**
+        * @param args
+        */
+       public static void main(String[] args) {
+             Timer timer = new Timer();
+             Agendador agendador = new Agendador();
+             timer.schedule(agendador, 0, 300000);
 
-       @Override
-       public void run() {
-             instanteAtual = new Date();
-             System.out.println(instanteAtual);
+             while(true){
+                    System.out.println("Executando...");
+                    try {
+                           Thread.sleep(600000);
+                    } catch (InterruptedException e) {
+                           // TODO Auto-generated catch block
+                           e.printStackTrace();
+                    }
+             }
        }
 
 }
