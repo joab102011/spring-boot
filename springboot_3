@@ -1,0 +1,18 @@
+import java.util.Date;
+
+import org.quartz.Job;
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
+
+
+public class ValidadorJob implements Job {
+
+       @Override
+       public void execute(JobExecutionContext arg0) throws JobExecutionException {
+              //Simula validações
+             System.out.println("Autenticando dados duplicados no banco. At "+new Date());
+             System.out.println("Excluindo registros com mais de 1 dia sem uso."+new Date());
+
+       }
+
+}
